@@ -1,32 +1,36 @@
-# 🚀 PROYECTO NLP: Analisis de Sentimientos
+# 🚀 PROYECTO NLP: Detección de Mensajes de Odio en YouTube
 
-![NLP](https://github.com/user-attachments/assets/aa8ae666-25aa-416c-8be4-58e1af7a00c6)
+> Proyecto de Data Science / AI Developer — Clasificación de texto con técnicas de NLP y Machine Learning para la detección automática de comentarios de odio.
 
-## 📜 Briefing: PROYECTO DATA SCIENTIST/AI DEVELOPER
+![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-ML-orange?logo=scikit-learn&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-red?logo=streamlit&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Containerized-blue?logo=docker&logoColor=white)
+![MLflow](https://img.shields.io/badge/MLflow-Tracking-blueviolet?logo=mlflow&logoColor=white)
+![Estado](https://img.shields.io/badge/Estado-En%20Desarrollo-yellow)
 
-### 🔍 Planteamiento
+---
 
-YouTube lleva un tiempo preocupado por el aumento de los mensajes de odio entre los
-comentarios de sus vídeos y ha llegado a un punto donde un equipo de moderadores no da
-a basto y aumentar ese equipo sería prohibitivamente caro, además de que no se hace
-posible escalar el equipo al ritmo al que crece la plataforma y aumenta el volumen de estos
-mensajes.
-Por ese motivo han decidido subcontratar a una consultora, donde trabajáis, en busca de
-una solución para poder detectar este tipo de mensajes de forma automática y para así
-poder eliminarlos, banear al usuario o tomar las acciones necesarias.
-Han hecho hincapié en que es importante la implementación de la solución que encontréis,
-quieren una solución práctica por encima de una herramienta precisa.
+## 📜 Contexto del Proyecto
+
+### 🔍 Problema a Resolver
+
+YouTube enfrenta un crecimiento descontrolado de comentarios de odio que los equipos de moderación humana ya no pueden gestionar de forma escalable. Ante este reto, se nos encarga como consultora el diseño e implementación de una **solución automatizada basada en NLP y Machine Learning** capaz de detectar este tipo de mensajes en tiempo real.
+
+El cliente prioriza una **solución funcional y desplegable** sobre la precisión perfecta del modelo: quieren poder actuar (eliminar mensajes, banear usuarios) de forma automática cuanto antes.
 
 ---
 
 ## 🎯 Objetivos del Proyecto
 
-* **Analizar un dataset de texto.**
-* **Preprocesar los datos.**
-* **Implementar técnicas clásicas de procesamiento del lenguaje natural.**
-* **Entrenar un modelo de Machine Learning de clasificación.**
-* **Evaluación de resultados.**
-* **Tuneo de hiperparámetros.**
+| # | Objetivo |
+|---|----------|
+| 1 | 🔎 Analizar y comprender el dataset de comentarios de YouTube |
+| 2 | 🧹 Preprocesar y limpiar los datos de texto |
+| 3 | 🔤 Aplicar técnicas clásicas de NLP (tokenización, stemming, lematización) |
+| 4 | 🤖 Entrenar un modelo de clasificación binaria (odio / no odio) |
+| 5 | 📈 Evaluar el rendimiento del modelo con métricas relevantes |
+| 6 | ⚙️ Optimizar hiperparámetros del modelo seleccionado |
 
 ---
 
@@ -44,20 +48,28 @@ Para la fecha de entrega, los equipos deberán presentar:
 
 ---
 
-## ⚙️ Tecnologías Recomendadas
+## ⚙️ Stack Tecnológico
 
-- **Control de versiones:** Git / GitHub
-- **Entorno de ejecución:** Docker
-- **Lenguaje principal:** Python
-- **Librerías útiles:** Scikit-learn, Pandas, Spacy, NLTK, Optuna, Huggingface, BeautifulSoup, requests, Scrapy
-- **Visualización de Datos:** Streamlit
-- **Gestión del proyecto:** Trello, Jira, Github
+| Categoría | Herramientas |
+|-----------|-------------|
+| 🐍 Lenguaje | Python 3.11 |
+| 🤖 ML / NLP | Scikit-learn, NLTK, SpaCy, Hugging Face Transformers |
+| 📊 Datos | Pandas, NumPy |
+| ⚙️ Optimización | Optuna |
+| 🌐 Scraping | BeautifulSoup, Requests, Scrapy |
+| 🖥️ App / API | Streamlit, FastAPI |
+| 📦 Contenedores | Docker, Docker Compose |
+| 🔬 Experimentos | MLflow |
+| 🗂️ Versiones | Git / GitHub |
+| 📋 Gestión | Trello / Jira |
 
 ---
 
 ## 🏆 Datos
 
-[Youtube Comments](https://drive.google.com/file/d/1bG7fA273jIBgJfc6YS1vsKfr1qRiNUTU/view?usp=sharing)
+> Dataset de comentarios de YouTube etiquetados como odio / no odio.
+
+📥 [Descargar dataset — Youtube Comments](https://drive.google.com/file/d/1bG7fA273jIBgJfc6YS1vsKfr1qRiNUTU/view?usp=sharing)
 
 ---
 
@@ -103,19 +115,46 @@ Para la fecha de entrega, los equipos deberán presentar:
 
 ## 📊 Evaluación
 
-Se considerarán los siguientes criterios:
+Se considerarán los siguientes criterios técnicos:
 
-✅ Preprocesamiento (stemming, lematización, stopwords)
-✅ Modelos de clasificación aplicados a texto
-✅ Emplea técnicas de vectorización clásicas
-✅ Uso de Expresiones regulares
-✅ Implementa técnicas de data augmentation en texto (traducción, reemplazo por sinónimos, etc.)
+| Criterio | Descripción |
+|----------|-------------|
+| 🧹 Preprocesamiento | Stemming, lematización, eliminación de stopwords |
+| 🤖 Modelos | Clasificadores aplicados a texto |
+| 🔢 Vectorización | TF-IDF, Bag of Words u otras técnicas clásicas |
+| 🔍 Regex | Uso de expresiones regulares para limpieza y extracción |
+| 🔄 Data Augmentation | Traducción, sinónimos u otras técnicas de aumento de datos |
 
-Más detalles en: [roadmap-mad-ai-p4.coderf5.es](https://roadmap-mad-ai-p4.coderf5.es/)
+📌 Más detalles en: [roadmap-mad-ai-p4.coderf5.es](https://roadmap-mad-ai-p4.coderf5.es/)
 
 ---
 
-## 📁 Estructura del Proyecto
+## � Cómo Ejecutar el Proyecto
+
+### 🔧 Instalación local
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/tu-usuario/NLP_Analisis_Sentimientos.git
+cd NLP_Analisis_Sentimientos
+
+# Crear entorno virtual e instalar dependencias
+python -m venv venv
+source venv/bin/activate  # En Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### 🐳 Ejecución con Docker
+
+```bash
+docker-compose up --build
+```
+
+La aplicación estará disponible en `http://localhost:8501`
+
+---
+
+## �📁 Estructura del Proyecto
 
 ```
 NLP_Analisis_Sentimientos/
