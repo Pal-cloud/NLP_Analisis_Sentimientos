@@ -2,7 +2,7 @@
 
 > Proyecto de Data Science / AI Developer — Clasificación de texto con técnicas de NLP y Machine Learning para la detección automática de comentarios de odio.
 
-![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.14-blue?logo=python&logoColor=white)
 ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-ML-orange?logo=scikit-learn&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-App-red?logo=streamlit&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-Containerized-blue?logo=docker&logoColor=white)
@@ -49,7 +49,7 @@ Para la fecha de entrega, los equipos deberán presentar:
 
 | Categoría | Herramientas |
 |-----------|-------------|
-| Lenguaje | Python 3.11 |
+| Lenguaje | Python 3.14 |
 | ML / NLP | Scikit-learn, NLTK, SpaCy, Hugging Face Transformers |
 | Datos | Pandas, NumPy |
 | Optimización | Optuna |
@@ -64,9 +64,35 @@ Para la fecha de entrega, los equipos deberán presentar:
 
 ## Datos
 
-> Dataset de comentarios de YouTube etiquetados como odio / no odio.
+> Dataset de comentarios reales de YouTube en inglés con etiquetas de toxicidad múltiple.
 
-[Descargar dataset — Youtube Comments](https://drive.google.com/file/d/1bG7fA273jIBgJfc6YS1vsKfr1qRiNUTU/view?usp=sharing)
+[Descargar dataset — youtoxic_english_1000.csv](https://drive.google.com/file/d/1bG7fA273jIBgJfc6YS1vsKfr1qRiNUTU/view?usp=sharing)
+
+Una vez descargado, colocar el archivo en: `data/raw/youtoxic_english_1000.csv`
+
+### Estructura del dataset
+
+| Campo | Descripción |
+|-------|-------------|
+| `CommentId` | Identificador único del comentario |
+| `VideoId` | Identificador del vídeo de YouTube |
+| `Text` | Texto del comentario (columna principal) |
+| `IsToxic` | Etiqueta objetivo principal (True/False) |
+| `IsAbusive` | Comentario abusivo |
+| `IsThreat` | Contiene amenazas |
+| `IsProvocative` | Contenido provocador |
+| `IsObscene` | Lenguaje obsceno |
+| `IsHatespeech` | Discurso de odio |
+| `IsRacist` | Contenido racista |
+| `IsNationalist` | Contenido nacionalista extremo |
+| `IsSexist` | Contenido sexista |
+| `IsHomophobic` | Contenido homofóbico |
+| `IsReligiousHate` | Odio religioso |
+| `IsRadicalism` | Contenido radical |
+
+- **1.000 comentarios** etiquetados manualmente
+- **Idioma:** inglés
+- **Etiqueta para el nivel esencial:** `IsToxic` (clasificación binaria)
 
 ---
 
@@ -110,8 +136,6 @@ Se considerarán los siguientes criterios técnicos:
 | Regex | Uso de expresiones regulares para limpieza y extracción |
 | Data Augmentation | Traducción, sinónimos u otras técnicas de aumento de datos |
 
-Más detalles en: [roadmap-mad-ai-p4.coderf5.es](https://roadmap-mad-ai-p4.coderf5.es/)
-
 ---
 
 ## Cómo Ejecutar el Proyecto
@@ -125,9 +149,12 @@ cd NLP_Analisis_Sentimientos
 
 # Crear entorno virtual e instalar dependencias
 python -m venv venv
-source venv/bin/activate  # En Windows: venv\Scripts\activate
+venv\Scripts\activate        # Windows
+# source venv/bin/activate   # Mac / Linux
 pip install -r requirements.txt
 ```
+
+> Coloca el dataset en `data/raw/youtoxic_english_1000.csv` antes de ejecutar los notebooks.
 
 ### Ejecución con Docker
 
