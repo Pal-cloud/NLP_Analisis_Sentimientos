@@ -4,7 +4,7 @@ Proyecto: NLP - Análisis de Sentimientos / Hate Speech Detection
 """
 
 import os
-import pickle
+import joblib
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -31,10 +31,8 @@ def load_artifacts():
     """Carga el modelo y el vectorizador TF-IDF desde disco."""
     if not os.path.exists(MODEL_PATH) or not os.path.exists(VECTORIZER_PATH):
         return None, None
-    with open(MODEL_PATH, "rb") as f:
-        model = pickle.load(f)
-    with open(VECTORIZER_PATH, "rb") as f:
-        vectorizer = pickle.load(f)
+    model = joblib.load(MODEL_PATH)
+    vectorizer = joblib.load(VECTORIZER_PATH)
     return model, vectorizer
 
 
