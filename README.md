@@ -156,6 +156,23 @@ pip install -r requirements.txt
 
 > Coloca el dataset en `data/raw/youtoxic_english_1000.csv` antes de ejecutar los notebooks.
 
+### Ejecutar la app Streamlit (local)
+
+> ⚠️ Antes de lanzar la app, asegúrate de haber ejecutado los notebooks para generar los modelos.
+
+```bash
+# 1. Ejecutar el notebook de preprocesamiento
+jupyter nbconvert --to notebook --execute notebooks/01_EDA_y_Preprocesamiento.ipynb
+
+# 2. Ejecutar el notebook de modelado (genera models/trained_model.pkl y models/tfidf_vectorizer.pkl)
+jupyter nbconvert --to notebook --execute notebooks/02_Modelado.ipynb
+
+# 3. Lanzar la app
+streamlit run app/main.py
+```
+
+La aplicación estará disponible en `http://localhost:8501`
+
 ### Ejecución con Docker
 
 ```bash
@@ -163,6 +180,23 @@ docker-compose up --build
 ```
 
 La aplicación estará disponible en `http://localhost:8501`
+
+---
+
+## Flujo de ramas Git
+
+| Rama | Propósito |
+|------|-----------|
+| `main` | Código estable y listo para producción |
+| `develop` | Integración de nuevas funcionalidades |
+| `feature/streamlit-app` | Desarrollo de la interfaz Streamlit |
+
+```bash
+# Cambiar entre ramas
+git checkout main
+git checkout develop
+git checkout feature/streamlit-app
+```
 
 ---
 
